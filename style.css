@@ -1,0 +1,212 @@
+window {
+  background: #f9dbe6;
+  color: #514b5b;
+  font-family: "Noto Sans CJK SC", "Noto Sans", sans-serif;
+}
+
+.app-root {
+  background: #f9dbe6;
+}
+
+.macaron-header {
+  background: #bfe8f5;
+  min-height: 92px;
+  padding: 12px 28px;
+  border-bottom: 3px solid #9bd4e8;
+}
+
+.bow-icon {
+  margin-right: 4px;
+}
+
+.app-title {
+  color: #47536b;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.app-subtitle {
+  color: #66758c;
+  font-size: 13px;
+}
+
+.pink-body {
+  background: #f9dbe6;
+}
+
+.theme-badge, .size-badge {
+  background: #fff4c9;
+  color: #7b6072;
+  border: 2px solid #efb7cc;
+  border-radius: 16px;
+  padding: 7px 13px;
+  font-weight: 700;
+}
+
+.drop-card {
+  background: #fff3cf;
+  border: 3px dashed #eaa9c1;
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.drop-card.drag-active {
+  background: #ffe9ae;
+  border-color: #ee73a5;
+}
+
+.drop-title {
+  color: #635467;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.drop-hint {
+  color: #9a7788;
+  font-weight: 700;
+}
+
+.file-label {
+  color: #8d7a80;
+}
+
+.size-card {
+  background: #fcebf1;
+  border: 2px solid #efbfd0;
+  border-radius: 18px;
+  padding: 16px 20px;
+}
+
+.section-title {
+  color: #5e5365;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+scale trough {
+  background: #c7eaf5;
+  border-radius: 8px;
+  min-height: 9px;
+}
+
+scale highlight {
+  background: #ef8eb4;
+  border-radius: 8px;
+}
+
+scale slider {
+  background: #f47dae;
+  border: 3px solid #fff5f8;
+  box-shadow: 0 2px 5px alpha(#9f5677, .35);
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+}
+
+button {
+  border-radius: 15px;
+  padding: 10px 19px;
+  font-weight: 800;
+  box-shadow: 0 2px 5px alpha(#735668, .18);
+}
+
+.primary-button {
+  background: #ef8eb4;
+  color: #4e3e50;
+  border: 2px solid #df73a0;
+}
+
+.primary-button:hover {
+  background: #f5a3c3;
+}
+
+.blue-button {
+  background: #c3eaf5;
+  color: #46586b;
+  border: 2px solid #97d4e7;
+}
+
+.blue-button:hover {
+  background: #d4f2fa;
+}
+
+.danger-button {
+  background: #f3a3b3;
+  color: #603d4c;
+  border: 2px solid #df7f96;
+}
+
+.history-button {
+  background: #fff0ba;
+  color: #635363;
+  border: 2px solid #e6c77e;
+}
+
+.history-button:hover {
+  background: #fff6d5;
+}
+
+.history-window {
+  background: #f9dbe6;
+}
+
+.history-title {
+  color: #4f556c;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.history-hint, .history-empty {
+  color: #826f7a;
+}
+
+.history-row {
+  background: #fff3cf;
+  border: 2px solid #edbfd0;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+.history-theme-button {
+  background: #c3eaf5;
+  color: #46586b;
+  border: 2px solid #97d4e7;
+}
+
+.history-theme-button.active-theme {
+  background: #9edcec;
+  border-color: #ef8eb4;
+}
+
+.forget-button {
+  background: #f8cad4;
+  color: #754b5b;
+  border: 2px solid #e9a7b9;
+}
+
+.candy-progress trough {
+  background: #fff3cf;
+  border: 1px solid #eab9c9;
+  border-radius: 12px;
+  min-height: 22px;
+}
+
+.candy-progress progress {
+  background: #a9dfec;
+  border-radius: 11px;
+}
+
+.status-label {
+  color: #6f6371;
+  font-weight: 600;
+}
+
+.status-label.error {
+  color: #b54865;
+}
+
+.pixel-hearts {
+  min-width: 108px;
+  min-height: 32px;
+  margin-left: 12px;
+}

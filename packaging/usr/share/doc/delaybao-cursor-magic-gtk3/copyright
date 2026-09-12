@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: delay宝指针大法 GTK3 edition
+Source: local
+
+Files: *
+Copyright: 2026 momo
+License: GPL-3+
+
+Files: usr/share/delaybao-cursor-gtk3/converter.py
+Copyright: 2020-2026 quantum5/win2xcur contributors; 2026 momo
+License: GPL-3+
+ The converter's Xcursor writer and ANI parsing model are adapted from:
+ https://github.com/quantum5/win2xcur
+ .
+ The full GNU General Public License version 3 is available on Debian and
+ Ubuntu systems at /usr/share/common-licenses/GPL-3.

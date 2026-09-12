@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <!-- 左右耳朵 -->
+  <path fill="#b94378" d="M1 2h4v1h2v2h2V3h2V2h4v1h1v6h-1v1h-4V9H9v2H7V9H5v1H1V9H0V3h1z"/>
+  <path fill="#f184b1" d="M2 3h3v1h2v4H5v1H2V8H1V4h1zm9 0h3v1h1v4h-1v1h-3V8H9V4h2z"/>
+  <path fill="#ffc2db" d="M2 4h3v1H3v2H2zm9 0h3v3h-1V5h-2z"/>
+
+  <!-- 中间结 -->
+  <path fill="#b94378" d="M6 4h4v1h1v4h-1v1H6V9H5V5h1z"/>
+  <path fill="#f58ab6" d="M7 5h2v4H7z"/>
+  <path fill="#ffd0e2" d="M7 5h2v1H7z"/>
+
+  <!-- 左飘带，末端带燕尾缺口 -->
+  <path fill="#b94378" d="M5 8h3v3H7v4H5v-1H3v1H1v-2h1v-3h2V9h1z"/>
+  <path fill="#ed79a8" d="M5 9h2v2H6v3H5v-1H3v-2h1v-1h1z"/>
+  <path fill="#ffc2db" d="M5 10h1v2H5z"/>
+
+  <!-- 右飘带，末端带燕尾缺口 -->
+  <path fill="#b94378" d="M8 8h3v1h1v1h2v3h1v2h-2v-1h-2v1H9v-4H8z"/>
+  <path fill="#ed79a8" d="M9 9h2v1h1v1h1v2h-2v1h-1v-3H9z"/>
+  <path fill="#ffc2db" d="M10 10h1v2h-1z"/>
+</svg>

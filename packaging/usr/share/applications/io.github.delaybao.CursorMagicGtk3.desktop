@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=delay宝指针大法
+GenericName=鼠标指针转换器
+Comment=适用于 Ubuntu 20.04 的 GTK3 兼容版
+Exec=delaybao-cursor-gtk3
+Icon=io.github.delaybao.CursorMagicGtk3
+Terminal=false
+Categories=Utility;
+Keywords=cursor;mouse;theme;光标;鼠标;指针;
+StartupNotify=true

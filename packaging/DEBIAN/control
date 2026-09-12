@@ -1,0 +1,10 @@
+Package: delaybao-cursor-magic-gtk3
+Version: 1.0.3~ubuntu20.04
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.8), python3-gi, gir1.2-gtk-3.0, python3-pil, libgtk-3-0, libglib2.0-bin
+Maintainer: momo
+Description: GTK3 edition of delaybao cursor converter
+ delay宝指针大法 GTK3 edition converts Windows ANI/CUR cursor themes
+ to Linux Xcursor themes. This package targets Ubuntu 20.04 and Python 3.8.
