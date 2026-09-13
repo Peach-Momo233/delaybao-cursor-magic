@@ -3,7 +3,7 @@
 一个带图形界面的 Windows 鼠标指针转换工具，可将 .ani、.cur
 或包含这些文件的 ZIP、RAR 转换为 Linux Xcursor 主题。
 
-适用于 Ubuntu 20.04、22.04 等提供 GTK3 的 Linux 系统。
+适用于 Ubuntu 20.04-26.04 等提供 GTK3 的 Linux 系统。
 
 ## 软件截图
 
