@@ -22,7 +22,7 @@ done
 
 echo "[1/4] 安装运行依赖……"
 apt-get update
-apt-get install -y python3 python3-gi python3-pil gir1.2-gtk-3.0 libgtk-3-0 libglib2.0-bin
+apt-get install -y python3 python3-gi python3-pil gir1.2-gtk-3.0 libgtk-3-0 libglib2.0-bin unrar
 
 echo "[2/4] 复制程序文件……"
 install -d -m 755 "${APP_DIR}"

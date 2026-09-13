@@ -111,7 +111,7 @@ class DelaybaoWindow(Gtk.ApplicationWindow):
         self.drop.set_size_request(-1, 175)
         drop_title = Gtk.Label(label="把鼠标皮肤拖放到这里")
         add_class(drop_title, "drop-title")
-        drop_hint = Gtk.Label(label="支持 ZIP / INF / ANI / CUR")
+        drop_hint = Gtk.Label(label="支持 ZIP / RAR / INF / ANI / CUR")
         add_class(drop_hint, "drop-hint")
         self.file_label = Gtk.Label(label="也可以点击下方按钮选择文件")
         self.file_label.set_ellipsize(3)
@@ -196,8 +196,8 @@ class DelaybaoWindow(Gtk.ApplicationWindow):
             "选择", Gtk.ResponseType.OK
         )
         file_filter = Gtk.FileFilter()
-        file_filter.set_name("鼠标皮肤（ZIP、INF、ANI、CUR）")
-        for pattern in ("*.zip", "*.ZIP", "*.inf", "*.INF",
+        file_filter.set_name("鼠标皮肤（ZIP、RAR、INF、ANI、CUR）")
+        for pattern in ("*.zip", "*.ZIP", "*.rar", "*.RAR", "*.inf", "*.INF",
                         "*.ani", "*.ANI", "*.cur", "*.CUR"):
             file_filter.add_pattern(pattern)
         dialog.add_filter(file_filter)
@@ -226,8 +226,8 @@ class DelaybaoWindow(Gtk.ApplicationWindow):
         Gtk.drag_finish(context, False, False, time)
 
     def _select(self, path):
-        if path.suffix.lower() not in (".zip", ".inf", ".ani", ".cur"):
-            self._message("不支持这个格式，请选择 ZIP、INF、ANI 或 CUR", True)
+        if path.suffix.lower() not in (".zip", ".rar", ".inf", ".ani", ".cur"):
+            self._message("不支持这个格式，请选择 ZIP、RAR、INF、ANI 或 CUR", True)
             return
         self.source = path
         self.file_label.set_text("已选择：{}".format(path.name))

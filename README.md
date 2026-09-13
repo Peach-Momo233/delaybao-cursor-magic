@@ -1,7 +1,7 @@
 # delay宝指针大法
 
 一个带图形界面的 Windows 鼠标指针转换工具，可将 .ani、.cur
-或包含这些文件的 ZIP 转换为 Linux Xcursor 主题。
+或包含这些文件的 ZIP、RAR 转换为 Linux Xcursor 主题。
 
 适用于 Ubuntu 20.04、22.04 等提供 GTK3 的 Linux 系统。
 
@@ -17,7 +17,7 @@
 
 ## 功能
 
-- 拖放 ZIP、INF、ANI、CUR 文件
+- 拖放 ZIP、RAR、INF、ANI、CUR 文件
 - 一键转换、安装并启用光标主题
 - 调整光标大小
 - 保存历史安装记录并快速切换
@@ -48,7 +48,7 @@
 
 也可以下载 Release 页面中的 .deb 文件并双击安装，或运行：
 
-    sudo apt install ./delay宝指针大法_1.0.3_ubuntu20.04_gtk3_all.deb
+    sudo apt install ./delay宝指针大法_1.0.5_ubuntu_gtk3_all.deb
 
 ## 卸载
 

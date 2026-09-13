@@ -11,6 +11,7 @@ import hashlib
 import re
 import shutil
 import struct
+import subprocess
 import tempfile
 import zipfile
 from dataclasses import dataclass
@@ -247,6 +248,51 @@ def extract_input(source: Path, destination: Path) -> List[Path]:
                 target = destination / Path(member_name).name
                 with archive.open(info) as src, target.open("wb") as dst:
                     shutil.copyfileobj(src, dst)
+    elif suffix == ".rar":
+        unrar = shutil.which("unrar") or shutil.which("unrar-nonfree")
+        if not unrar:
+            raise RuntimeError("缺少 RAR 解包组件，请安装 unrar")
+        try:
+            listing = subprocess.run(
+                [unrar, "lt", "--", str(source)],
+                check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                universal_newlines=True,
+            )
+        except subprocess.CalledProcessError as error:
+            detail = (error.stderr or error.stdout or "").strip()
+            raise ValueError("无法读取 RAR 压缩包（可能损坏或需要密码）" +
+                             (f"：{detail}" if detail else ""))
+        sizes = []
+        for match in re.finditer(r"^\s*Size:\s*(\d+)\s*$",
+                                 listing.stdout, re.MULTILINE):
+            sizes.append(int(match.group(1)))
+        if len(sizes) > MAX_FILES:
+            raise ValueError("压缩包文件数量过多")
+        if sum(sizes) > MAX_ARCHIVE_SIZE:
+            raise ValueError("压缩包解压后超过 150 MB")
+        rar_root = destination / "rar-extracted"
+        rar_root.mkdir()
+        try:
+            subprocess.run(
+                [unrar, "x", "-idq", "-o+", "--", str(source),
+                 str(rar_root) + "/"],
+                check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                universal_newlines=True,
+            )
+        except subprocess.CalledProcessError as error:
+            detail = (error.stderr or error.stdout or "").strip()
+            raise ValueError("RAR 解压失败（可能损坏或需要密码）" +
+                             (f"：{detail}" if detail else ""))
+        root = rar_root.resolve()
+        for item in rar_root.rglob("*"):
+            if item.is_symlink() or not item.is_file():
+                continue
+            try:
+                item.resolve().relative_to(root)
+            except ValueError:
+                continue
+            if item.suffix.lower() in (".ani", ".cur", ".inf"):
+                shutil.copy2(item, destination / item.name)
     elif suffix in (".ani", ".cur"):
         shutil.copy2(source, destination / source.name)
     elif suffix == ".inf":
@@ -254,7 +300,7 @@ def extract_input(source: Path, destination: Path) -> List[Path]:
             if item.suffix.lower() in (".ani", ".cur"):
                 shutil.copy2(item, destination / item.name)
     else:
-        raise ValueError("请选择 ZIP、INF、ANI 或 CUR 文件")
+        raise ValueError("请选择 ZIP、RAR、INF、ANI 或 CUR 文件")
     return sorted((*destination.glob("*.ani"), *destination.glob("*.cur")))
 
 
